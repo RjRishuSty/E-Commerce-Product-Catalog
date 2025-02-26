@@ -5,14 +5,14 @@ import {
   IconButton,
   Menu,
   MenuItem,
-  Toolbar,
-  Typography,
+  Toolbar
 } from "@mui/material";
-import StorefrontIcon from "@mui/icons-material/Storefront";
+
 import MenuSharpIcon from "@mui/icons-material/MenuSharp";
 import NavLinks from "../NavLinks/NavLinks";
 import Mode from "../Mode/Mode";
 import { useState } from "react";
+import Logo from "../Logo/Logo";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -26,14 +26,10 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{p:0.5}}>
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* Logo Section */}
-        <Typography variant="h6" sx={{ display: "flex", alignItems: "center" }}>
-          <StorefrontIcon sx={{ fontSize: "2rem", mr: 1 }} />
-          VegStore
-        </Typography>
-
+        <Logo/>
         {/* Desktop Navigation */}
         <Box sx={{ display: { xs: "none", md: "block" } }}>
           <NavLinks linkType="header" />

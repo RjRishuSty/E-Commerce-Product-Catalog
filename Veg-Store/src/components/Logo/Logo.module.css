@@ -1,0 +1,14 @@
+.logoSection{
+    /* border: 2px solid red; */
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+.caption{
+    /* border: 2px solid yellow; */
+    margin-top: -12px;
+    letter-spacing: 1px;
+}

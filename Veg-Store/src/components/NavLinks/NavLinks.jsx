@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
+import Styles from "./NavLinks.module.css";
 
 const NavLinks = ({ linkType }) => {
   const links = [
@@ -19,10 +20,18 @@ const NavLinks = ({ linkType }) => {
               key={item.name}
               end
               style={({ isActive }) => ({
-                color: isActive ? "white" : "black",
+                color: isActive ? "#ffc307" : "white",
                 fontWeight: 600,
                 display: "block",
+                marginBottom: "0.8rem",
               })}
+              onMouseEnter={(e) => (e.target.style.color = "#ffcc57")}
+              onMouseLeave={(e) =>
+                (e.target.style.color =
+                  item.to === window.location.pathname
+                    ? '"#ffc307"'
+                    : "#ffffff")
+              }
             >
               {item.name}
             </NavLink>
@@ -42,17 +51,24 @@ const NavLinks = ({ linkType }) => {
             }}
           >
             {links.map((item) => (
-              <li key={item.name}>
+              <li key={item.name} className={Styles.navItem}>
                 <NavLink
                   to={item.to}
                   end
                   style={({ isActive }) => ({
-                    color: isActive ? "#9e00ff" : "white",
+                    color: isActive ? "#ffc307" : "#ffffff",
                     fontWeight: isActive ? "700" : "500",
-                    fontSize: "1.1rem",
+                    fontSize: "1rem",
                     textDecoration: "none",
-                    letterSpacing:"0.2px"
+                    letterSpacing: "0.2px",
                   })}
+                  onMouseEnter={(e) => (e.target.style.color = "#ffcc57")}
+                  onMouseLeave={(e) =>
+                    (e.target.style.color =
+                      item.to === window.location.pathname
+                        ? "ffc307"
+                        : "#ffffff")
+                  }
                 >
                   {item.name}
                 </NavLink>
