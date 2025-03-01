@@ -1,68 +1,84 @@
-import {
-  AppBar,
-  Box,
-  Button,
-  IconButton,
-  Menu,
-  MenuItem,
-  Toolbar
-} from "@mui/material";
+import { AppBar, Box, Button, IconButton, Toolbar } from "@mui/material";
 
 import MenuSharpIcon from "@mui/icons-material/MenuSharp";
 import NavLinks from "../NavLinks/NavLinks";
+import LoginIcon from "@mui/icons-material/Login";
+// import LogoutIcon from "@mui/icons-material/Logout";
+import HowToRegIcon from "@mui/icons-material/HowToReg";
 import Mode from "../Mode/Mode";
-import { useState } from "react";
 import Logo from "../Logo/Logo";
+import SideBar from "../SideBar/SideBar";
+import { useContext } from "react";
+import { ThemeContexts } from "../../App";
 
 const Header = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
-
-  const handleMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
-
+  const { isMobile, isSidebar, handleMenu } = useContext(ThemeContexts);
   return (
-    <AppBar position="static" sx={{p:0.5}}>
+    <AppBar position="static" sx={{ p: 0.5 }}>
       <Toolbar sx={{ justifyContent: "space-between" }}>
-        {/* Logo Section */}
-        <Logo/>
-        {/* Desktop Navigation */}
-        <Box sx={{ display: { xs: "none", md: "block" } }}>
-          <NavLinks linkType="header" />
-        </Box>
+        <Logo />
 
-        {/* Login/Logout Buttons */}
-        <Box>
-          <Mode/>
-          <Button variant="text" color="inherit">
-            Login
-          </Button>
-          <Button variant="text" color="inherit">
-            Logout
-          </Button>
+        {!isMobile && <NavLinks linkType="header" />}
+        {/* Login/register/logout Buttons */}
+        <Box
+          component="div"
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Mode />
+          {!isMobile && (
+            <>
+              <Button
+                variant="text"
+                color="inherit"
+                sx={{
+                  textTransform: "capitalize",
+                  fontWeight: 600,
+                  letterSpacing: 0.5,
+                }}
+                startIcon={<LoginIcon />}
+              >
+                Login
+              </Button>
+              <Button
+                variant="text"
+                color="inherit"
+                sx={{
+                  textTransform: "capitalize",
+                  fontWeight: 600,
+                  letterSpacing: 0.5,
+                }}
+                endIcon={<HowToRegIcon />}
+              >
+                Register
+              </Button>
+              {/* <Button
+                variant="text"
+                color="inherit"
+                sx={{
+                  textTransform: "capitalize",
+                  fontWeight: 600,
+                  letterSpacing: 0.5,
+                }}
+                endIcon={<HowToRegIcon />}
+              >
+                Logout
+              </Button> */}
+            </>
+          )}
         </Box>
-
         {/* Mobile Menu Button */}
-        <Box sx={{ display: { xs: "block", md: "none" } }}>
-          <IconButton color="inherit" onClick={handleMenuOpen}>
-            <MenuSharpIcon />
-          </IconButton>
-          <Menu
-            id="mobile-menu"
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={handleMenuClose}
-            keepMounted
-          >
-            <MenuItem onClick={handleMenuClose}>
-              <NavLinks linkType="header" />
-            </MenuItem>
-          </Menu>
-        </Box>
+        {isMobile && (
+          <Box>
+            <IconButton color="inherit">
+              <MenuSharpIcon onClick={handleMenu} sx={{ fontSize: "2rem" }} />
+            </IconButton>
+            {isSidebar && <SideBar />}
+          </Box>
+        )}
       </Toolbar>
     </AppBar>
   );

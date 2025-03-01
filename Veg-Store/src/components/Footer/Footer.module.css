@@ -4,13 +4,8 @@
     min-height: 50vh;
     position: absolute;
     bottom: 0;
-    background: 
-    linear-gradient(305deg, rgba(14,238,3,0.5495448179271709) 0%, rgba(23,25,23,0.5131302521008403) 100%),
-    url('../../assets/footer.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: #020139;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} 

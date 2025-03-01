@@ -4,9 +4,17 @@ import Home from "./Pages/Home/Home";
 import { createContext, useEffect, useState } from "react";
 import { lightTheme, darkTheme } from "./theme";
 import { ThemeProvider } from "@emotion/react";
+import About from "./Pages/About/About";
+import { useMediaQuery } from "@mui/material";
 export const ThemeContexts = createContext();
 
 const App = () => {
+  const isMobile = useMediaQuery("(max-width:800px)");
+  const [isSidebar, setIsSideBar] = useState(false);
+  const handleMenu = () => {
+    setIsSideBar(!isSidebar);
+  };
+
   const [mode, setMode] = useState(
     () => localStorage.getItem("AppMode") || "light"
   );
@@ -25,11 +33,17 @@ const App = () => {
           path: "/",
           element: <Home />,
         },
+        {
+          path: "/about",
+          element: <About />,
+        },
       ],
     },
   ]);
   return (
-    <ThemeContexts.Provider value={{ mode, setMode }}>
+    <ThemeContexts.Provider
+      value={{ mode, setMode, isMobile, isSidebar, setIsSideBar, handleMenu }}
+    >
       <ThemeProvider theme={selectedTheme}>
         <RouterProvider router={router} />
       </ThemeProvider>

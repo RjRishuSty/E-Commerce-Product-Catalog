@@ -4,10 +4,10 @@ import AutoAwesomeSharpIcon from "@mui/icons-material/AutoAwesomeSharp";
 
 const Logo = () => {
   return (
-    <Box className={Styles.logoSection}>
+    <Box className={Styles.logoSection} sx={{flexGrow:{md:0,sm:1}}}>
       <Typography
         variant="h6"
-        color="inherit"
+        color="white"
         sx={{
           display: "flex",
           alignItems: "center",
