@@ -1,0 +1,37 @@
+.loginPage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Imgbox {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+}
+.loginImg{
+    width: 80%;
+    height: auto;
+    object-position: center;
+    object-fit: cover;
+}
+/* .welcomeGrid{
+    border: 1px solid black;
+    bg
+    background-image: url(../../assest/login.svg);
+} */
+.formGrid{
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column !important;
+    padding: 20px 15px;
+}

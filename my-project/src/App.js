@@ -8,11 +8,15 @@ import About from "./Pages/About/About";
 import { useMediaQuery } from "@mui/material";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
+// AUTH0
+import { useAuth0 } from "@auth0/auth0-react";
 export const ThemeContexts = createContext();
 
 const App = () => {
   const isMobile = useMediaQuery("(max-width:800px)");
   const [isSidebar, setIsSideBar] = useState(false);
+  const {user, isAuthenticated,logout,loginWithRedirect} = useAuth0();
+  // Handle Menu open or close.............
   const handleMenu = () => {
     setIsSideBar(!isSidebar);
   };
@@ -45,11 +49,11 @@ const App = () => {
       path: "/login",
       element: <Login />,
     },
-    { path: "/register", element: <Register /> },
+    { path: "/sign-up", element: <Register /> },
   ]);
   return (
     <ThemeContexts.Provider
-      value={{ mode, setMode, isMobile, isSidebar, setIsSideBar, handleMenu }}
+      value={{ mode, setMode, isMobile, isSidebar, setIsSideBar, handleMenu,user, isAuthenticated,logout,loginWithRedirect }}
     >
       <ThemeProvider theme={selectedTheme}>
         <RouterProvider router={router} />

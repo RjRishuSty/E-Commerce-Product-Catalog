@@ -8,25 +8,25 @@ const SocalMedia = () => {
     <>
       <FacebookOutlinedIcon
         color="inherit"
-        sx={{ mr: 5, color: "white", cursor: "pointer" }}
+        sx={{ mr: 5,  cursor: "pointer" }}
         onMouseEnter={(e)=>e.target.style.color="#ffc307"}
         onMouseLeave={(e)=>e.target.style.color="white"}
       />
       <InstagramIcon
         color="inherit"
-        sx={{ mr: 5, color: "white", cursor: "pointer" }}
+        sx={{ mr: 5,  cursor: "pointer" }}
         onMouseEnter={(e)=>e.target.style.color="#ffc307"}
         onMouseLeave={(e)=>e.target.style.color="white"}
       />
       <GitHubIcon
         color="inherit"
-        sx={{ mr: 5, color: "white", cursor: "pointer" }}
+        sx={{ mr: 5,  cursor: "pointer" }}
         onMouseEnter={(e)=>e.target.style.color="#ffc307"}
         onMouseLeave={(e)=>e.target.style.color="white"}
       />
       <XIcon
         color="inherit"
-        sx={{ mr: 5, color: "white", cursor: "pointer" }}
+        sx={{ mr: 5,  cursor: "pointer" }}
         onMouseEnter={(e)=>e.target.style.color="#ffc307"}
         onMouseLeave={(e)=>e.target.style.color="white"}
       />
