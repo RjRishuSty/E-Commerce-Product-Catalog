@@ -1,5 +1,5 @@
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
-import Styles from "./footer.module.css";
+import Styles from "./Footer.module.css";
 import NavLinks from "../NavLinks/NavLinks";
 import Logo from "../Logo/Logo";
 import SocalMedia from "../SocalMediaIcon/SocalMedia";
@@ -56,11 +56,16 @@ const Footer = () => {
             alignItems="center"
           >
             <Logo />
-            <Typography variant="subtitle1" color="white" gutterBottom sx={{marginTop:'-0.5rem'}}>
+            <Typography
+              variant="subtitle1"
+              color="white"
+              gutterBottom
+              sx={{ marginTop: "-0.5rem" }}
+            >
               Welcome to our E-commerce minikart store. Our store provide lot of
               projects just like shirt,t-shirt,jeens, fruits etc....
             </Typography>
-            <SocalMedia/>
+            <SocalMedia />
           </Grid>
         </Grid>
       </Container>

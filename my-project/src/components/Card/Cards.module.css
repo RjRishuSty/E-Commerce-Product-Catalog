@@ -1,0 +1,34 @@
+.card{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    background-color: #fff !important;
+    padding: 20px 15px !important;
+}
+.cardImg{
+    width: 100% !important;
+    height: 200px;
+    object-fit: contain !important;
+    object-position: center !important;
+    transition: transform 0.3s ease-in-out; 
+}
+.cardImg:hover{
+    transform: scale(1.2); 
+}
+
+.btn{
+    width: 100% !important;
+    height: auto;
+}
+.offerBox{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+}
