@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import PropTypes from "prop-types";
 import Styles from "./NavLinks.module.css";
 
 const NavLinks = ({ linkType }) => {
@@ -83,8 +82,5 @@ const NavLinks = ({ linkType }) => {
   }
 };
 
-NavLinks.propTypes = {
-  linkType: PropTypes.string.isRequired,
-};
 
 export default NavLinks;
