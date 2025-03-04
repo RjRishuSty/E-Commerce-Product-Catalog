@@ -6,7 +6,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useState } from "react";
 import Deal from "../DealOffer/Deal";
 import ProductRating from "../ProductRating/ProductRating";
-
+ 
 const Cards = ({ item }) => {
   const [favoriteProducts, setFavoriteProducts] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);

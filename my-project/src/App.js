@@ -6,6 +6,8 @@ import { lightTheme, darkTheme } from "./theme";
 import { ThemeProvider } from "@emotion/react";
 import About from "./Pages/About/About";
 import { useMediaQuery } from "@mui/material";
+import Login from "./Pages/Login/Login";
+import Register from "./Pages/Register/Register";
 export const ThemeContexts = createContext();
 
 const App = () => {
@@ -39,6 +41,11 @@ const App = () => {
         },
       ],
     },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+    { path: "/register", element: <Register /> },
   ]);
   return (
     <ThemeContexts.Provider

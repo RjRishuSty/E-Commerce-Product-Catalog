@@ -10,6 +10,7 @@ import Logo from "../Logo/Logo";
 import SideBar from "../SideBar/SideBar";
 import { useContext } from "react";
 import { ThemeContexts } from "../../App";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { isMobile, isSidebar, handleMenu } = useContext(ThemeContexts);
@@ -32,6 +33,8 @@ const Header = () => {
           {!isMobile && (
             <>
               <Button
+              component={Link}
+              to='/login'
                 variant="text"
                 color="inherit"
                 sx={{
@@ -39,11 +42,14 @@ const Header = () => {
                   fontWeight: 600,
                   letterSpacing: 0.5,
                 }}
+                
                 startIcon={<LoginIcon />}
               >
                 Login
               </Button>
               <Button
+              component={Link}
+              to='/register'
                 variant="text"
                 color="inherit"
                 sx={{

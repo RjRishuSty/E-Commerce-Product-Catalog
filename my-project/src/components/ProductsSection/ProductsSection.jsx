@@ -13,6 +13,7 @@ import Cards from "../Card/Cards";
 const ProductsSection = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {

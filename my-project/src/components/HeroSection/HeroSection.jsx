@@ -6,7 +6,7 @@ import Search from '../Search/Search';
 const HeroSection = () => {
   return (
     <Stack className={Styles.heroSection}>
-        <Container sx={{border:'2px solid red'}}>
+        <Container >
             <Search/>
         </Container>
     </Stack>
