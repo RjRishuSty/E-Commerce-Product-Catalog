@@ -1,11 +1,13 @@
-import ProductsSection from "../../components/ProductsSection/ProductsSection"
+import HeroSection from "../../components/HeroSection/HeroSection";
+import ProductsSection from "../../components/ProductsSection/ProductsSection";
 
 const Home = () => {
   return (
     <>
-      <ProductsSection/>
+      <HeroSection />
+      <ProductsSection />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
