@@ -1,0 +1,12 @@
+.profile{
+    /* border: 2px solid red; */
+    width: auto;
+    height: auto;
+    cursor: pointer;
+}
+.profileImg{
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px black;
+}

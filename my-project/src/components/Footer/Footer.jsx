@@ -65,7 +65,7 @@ const Footer = () => {
               Welcome to our E-commerce minikart store. Our store provide lot of
               projects just like shirt,t-shirt,jeens, fruits etc....
             </Typography>
-            <SocalMedia />
+            <SocalMedia componentType='footer'/>
           </Grid>
         </Grid>
       </Container>

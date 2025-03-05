@@ -12,6 +12,7 @@ import SideBar from "../SideBar/SideBar";
 import { useContext } from "react";
 import { ThemeContexts } from "../../App";
 import { Link } from "react-router-dom";
+import Profile from "../UserProfile/Profile";
 
 const Header = () => {
   const { isMobile, isSidebar, handleMenu, isAuthenticated,logout } =
@@ -36,7 +37,7 @@ const Header = () => {
           {!isMobile && (
             <>
               {isAuthenticated ? (
-                <Button
+                <>{/* <Button
                   variant="text"
                   color="inherit"
                   onClick = {(e)=>logout()}
@@ -48,7 +49,11 @@ const Header = () => {
                   endIcon={<LogoutIcon />}
                 >
                   Logout
-                </Button>
+                </Button> */
+                }
+                <Profile/>
+                </>
+               
               ) : (
                 <>
                   <Button

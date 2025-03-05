@@ -22,13 +22,10 @@
     object-position: center;
     object-fit: cover;
 }
-/* .welcomeGrid{
-    border: 1px solid black;
-    bg
-    background-image: url(../../assest/login.svg);
-} */
+
 .formGrid{
     background-color: #fff;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
