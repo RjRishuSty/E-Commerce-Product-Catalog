@@ -33,7 +33,7 @@ const Search = () => {
         onChange={handleSearch}
         className={Styles.search}
         sx={{border:'2px solid primary'}}
-        InputProps={{
+        InputProps={{ 
           endAdornment: (
             <InputAdornment position="end">
               {!search ? (

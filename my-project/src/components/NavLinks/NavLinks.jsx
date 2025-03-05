@@ -1,7 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Styles from "./NavLinks.module.css";
+import { useContext } from "react";
+import { ThemeContexts } from "../../App";
+import { Box, Button, Typography } from "@mui/material";
 
 const NavLinks = ({ linkType }) => {
+  const { user, logout } = useContext(ThemeContexts);
   const links = [
     { name: "Home", to: "/" },
     { name: "About", to: "/about" },
@@ -23,6 +27,7 @@ const NavLinks = ({ linkType }) => {
                 fontWeight: 600,
                 display: "block",
                 marginBottom: "0.8rem",
+                fontSize:'1.1rem'
               })}
               onMouseEnter={(e) => (e.target.style.color = "#ffcc57")}
               onMouseLeave={(e) =>
@@ -32,9 +37,43 @@ const NavLinks = ({ linkType }) => {
                     : "#ffffff")
               }
             >
-              {item.name}
+              {user && (item.to === "/login" || item.to === "/sign-up")
+                ? null
+                : item.name}
             </NavLink>
           ))}
+          {user && (
+            <>
+              <Box sx={{ mb: 1 }}>
+                <Typography
+                  component={Link}
+                  to="/view-profile"
+                  sx={{
+                    color: "white",
+                    fontWeight: 600,
+                    cursor: "pointer",
+                    fontSize:'1.1rem'
+                  }}
+                >
+                  View Profile
+                </Typography>
+              </Box>
+              <Box sx={{ mb: 1 }}>
+                <Typography
+                  onClick={logout}
+                  sx={{
+                    color: "white",
+                    fontWeight: 600,
+                    cursor: "pointer",
+                    textTransform:'capitalize',
+                    fontSize:'1.1rem'
+                  }}
+                >
+                  Logout
+                </Typography>
+              </Box>
+            </>
+          )}
         </nav>
       );
 
@@ -81,6 +120,5 @@ const NavLinks = ({ linkType }) => {
       return null;
   }
 };
-
 
 export default NavLinks;

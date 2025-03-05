@@ -1,10 +1,7 @@
 import { AppBar, Box, Button, IconButton, Toolbar } from "@mui/material";
-
 import MenuSharpIcon from "@mui/icons-material/MenuSharp";
 import NavLinks from "../NavLinks/NavLinks";
 import LoginIcon from "@mui/icons-material/Login";
-import LogoutIcon from "@mui/icons-material/Logout";
-// import LogoutIcon from "@mui/icons-material/Logout";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import Mode from "../Mode/Mode";
 import Logo from "../Logo/Logo";
@@ -15,7 +12,7 @@ import { Link } from "react-router-dom";
 import Profile from "../UserProfile/Profile";
 
 const Header = () => {
-  const { isMobile, isSidebar, handleMenu, isAuthenticated,logout } =
+  const { isMobile, isSidebar, handleMenu, isAuthenticated } =
     useContext(ThemeContexts);
     
   return (
@@ -37,23 +34,7 @@ const Header = () => {
           {!isMobile && (
             <>
               {isAuthenticated ? (
-                <>{/* <Button
-                  variant="text"
-                  color="inherit"
-                  onClick = {(e)=>logout()}
-                  sx={{
-                    textTransform: "capitalize",
-                    fontWeight: 600,
-                    letterSpacing: 0.5,
-                  }}
-                  endIcon={<LogoutIcon />}
-                >
-                  Logout
-                </Button> */
-                }
                 <Profile/>
-                </>
-               
               ) : (
                 <>
                   <Button

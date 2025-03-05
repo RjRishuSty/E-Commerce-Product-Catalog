@@ -7,7 +7,7 @@ import SocalMedia from "../SocalMediaIcon/SocalMedia";
 const Footer = () => {
   return (
     <Stack component="footer" className={Styles.footer}>
-      <Container>
+      <Container sx={{py:5}}>
         <Grid container>
           <Grid
             item
@@ -16,14 +16,15 @@ const Footer = () => {
             md={4}
             flexDirection="column"
             display="flex"
-            alignItems="center"
+            alignItems="start"
+            sx={{mb:{xs:3,sm:3}}}
           >
             <Typography
               sx={{
                 fontSize: "2rem",
                 color: "white",
                 fontWeight: 700,
-                textAlign: "center",
+                textAlign: "start",
               }}
               gutterBottom
             >
@@ -33,13 +34,13 @@ const Footer = () => {
               <NavLinks linkType="footer" />
             </Box>
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={6} md={4}  sx={{mb:{xs:3,sm:3}}}>
             <Typography
               sx={{
                 fontSize: "2rem",
                 color: "white",
                 fontWeight: 700,
-                textAlign: "center",
+                textAlign: "start",
               }}
             >
               Quick Links
@@ -54,22 +55,23 @@ const Footer = () => {
             display="flex"
             justifyContent="start"
             alignItems="center"
+            sx={{mb:{xs:3,sm:3}}}
           >
             <Logo />
             <Typography
               variant="subtitle1"
               color="white"
               gutterBottom
-              sx={{ marginTop: "-0.5rem" }}
+              sx={{ mt:{md:'-1.5rem',sm:0,xs:0} }}
             >
               Welcome to our E-commerce minikart store. Our store provide lot of
               projects just like shirt,t-shirt,jeens, fruits etc....
             </Typography>
-            <SocalMedia componentType='footer'/>
+            <SocalMedia componentType='footer' sx={{mt:1}}/>
           </Grid>
         </Grid>
       </Container>
-    </Stack>
+    </Stack> 
   );
 };
 

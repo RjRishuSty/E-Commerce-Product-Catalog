@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 import CloseButton from "../CloseButton/CloseButton";
 import NavLinks from "../NavLinks/NavLinks";
 import SocalMedia from "../SocalMediaIcon/SocalMedia";
+import SideBarIconBox from "../SideBarIconBox/SideBarIconBox";
 
 const SideBar = () => {
   return (
@@ -11,6 +12,9 @@ const SideBar = () => {
       <Box component='div' sx={{display:'flex',justifyContent:'space-between', alignItems:'center'}}>
         <Logo />
         <CloseButton/>
+      </Box>
+      <Box>
+        <SideBarIconBox/>
       </Box>
       <Box component='div' sx={{ mt:7,}}>
         <NavLinks linkType='footer'/>
@@ -23,3 +27,4 @@ const SideBar = () => {
 };
 
 export default SideBar;
+ 

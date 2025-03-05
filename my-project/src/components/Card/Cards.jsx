@@ -7,7 +7,7 @@ import { useState } from "react";
 import Deal from "../DealOffer/Deal";
 import ProductRating from "../ProductRating/ProductRating";
  
-const Cards = ({ item }) => {
+const Cards = ({ item,handleAddToCart }) => {
   const [favoriteProducts, setFavoriteProducts] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
   const handleFavoriteProduct = () => {
@@ -65,6 +65,7 @@ const Cards = ({ item }) => {
       <Button
         variant="contained"
         fullWidth
+        onClick={handleAddToCart}
         startIcon={<ShoppingCartCheckoutIcon sx={{ fontSize: "2rem" }} />}
       >
         Add to cart
