@@ -11,6 +11,7 @@ import Register from "./Pages/Register/Register";
 // AUTH0
 import { useAuth0 } from "@auth0/auth0-react";
 import { enqueueSnackbar } from "notistack";
+import UserProfile from "./Pages/UserProfile/UserProfile";
 export const ThemeContexts = createContext();
 
 const App = () => {
@@ -28,12 +29,14 @@ const App = () => {
     () => localStorage.getItem("AppMode") || "light"
   );
   useEffect(() => {
+    localStorage.setItem("AppMode", mode);
+  }, [mode]);
+
+  useEffect(() => {
     if(user){
       return enqueueSnackbar("Login successfully", {variant:'success'})
     }
-    
-    localStorage.setItem("AppMode", mode);
-  }, [mode,user]);
+  },[user]);
 
   const selectedTheme = mode === "light" ? lightTheme : darkTheme;
 
@@ -49,6 +52,10 @@ const App = () => {
         {
           path: "/about",
           element: <About />,
+        },
+        {
+          path: "/profile",
+          element: <UserProfile />,
         },
       ],
     },

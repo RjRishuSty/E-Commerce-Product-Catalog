@@ -8,7 +8,7 @@ import SideBarIconBox from "../SideBarIconBox/SideBarIconBox";
 
 const SideBar = () => {
   return (
-    <Box component="div" className={Styles.sidebar}>
+    <Box component="div" className={Styles.sidebar} sx={{backgroundColor:'primary.light'}}>
       <Box component='div' sx={{display:'flex',justifyContent:'space-between', alignItems:'center'}}>
         <Logo />
         <CloseButton/>
@@ -16,8 +16,8 @@ const SideBar = () => {
       <Box>
         <SideBarIconBox/>
       </Box>
-      <Box component='div' sx={{ mt:7,}}>
-        <NavLinks linkType='footer'/>
+      <Box component='div' sx={{ mt:4,}}>
+        <NavLinks linkType='sidebar'/>
       </Box>
       <Box component='div' sx={{ mt:5}}>
         <SocalMedia/>

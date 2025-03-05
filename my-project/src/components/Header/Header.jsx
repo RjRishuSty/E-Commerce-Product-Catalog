@@ -14,9 +14,9 @@ import Profile from "../UserProfile/Profile";
 const Header = () => {
   const { isMobile, isSidebar, handleMenu, isAuthenticated } =
     useContext(ThemeContexts);
-    
+
   return (
-    <AppBar position="static" sx={{ p: 0.5 }}>
+    <AppBar position="static" sx={{ p: 0.5, backgroundColor:'primary.light' }}>
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <Logo />
 
@@ -30,38 +30,40 @@ const Header = () => {
             alignItems: "center",
           }}
         >
-          <Mode />
           {!isMobile && (
             <>
               {isAuthenticated ? (
-                <Profile/>
+                <Profile />
               ) : (
                 <>
+                  <Mode />
                   <Button
                     component={Link}
                     to="/login"
                     variant="text"
-                    color="inherit"
                     sx={{
                       textTransform: "capitalize",
                       fontWeight: 600,
                       letterSpacing: 0.5,
+                      color:'accent.primary',
+                      marginRight:2
                     }}
-                    startIcon={<LoginIcon />}
+                    startIcon={<LoginIcon sx={{color:'secondary.main'}}/>}
                   >
                     Login
                   </Button>
                   <Button
                     component={Link}
                     to="/sign-up"
-                    variant="text"
-                    color="inherit"
+                    variant="contained"
                     sx={{
                       textTransform: "capitalize",
                       fontWeight: 600,
                       letterSpacing: 0.5,
+                      color:'accent.primary',
+                      backgroundColor:'accent.light'
                     }}
-                    endIcon={<HowToRegIcon />}
+                    endIcon={<HowToRegIcon sx={{color:'secondary.main'}}/>}
                   >
                     Sign up
                   </Button>
@@ -73,7 +75,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         {isMobile && (
           <Box>
-            <IconButton color="inherit">
+            <IconButton sx={{ color:"accent.primary"}}>
               <MenuSharpIcon onClick={handleMenu} sx={{ fontSize: "2rem" }} />
             </IconButton>
             {isSidebar && <SideBar />}

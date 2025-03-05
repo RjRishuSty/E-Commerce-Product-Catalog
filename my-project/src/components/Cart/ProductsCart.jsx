@@ -1,10 +1,14 @@
-import React from 'react'
+import React from "react";
 // import Styles from './Products.module.css';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { IconButton } from "@mui/material";
+import { Link, NavLink } from "react-router-dom";
 const ProductsCart = () => {
   return (
-    <ShoppingCartIcon fontSize='1.5rem' color='white'/>
-  )
-}
+    <NavLink to="/cart">
+      <ShoppingCartIcon size="large" sx={{ color: "white" }} />
+    </NavLink>
+  );
+};
 
-export default ProductsCart
+export default ProductsCart;

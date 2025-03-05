@@ -7,7 +7,7 @@ const Logo = () => {
     <Box className={Styles.logoSection} sx={{flexGrow:{md:0,sm:1,xs:1}}}>
       <Typography
         variant="h6"
-        color="white"
+        color="accent.primary"
         sx={{
           display: "flex",
           alignItems: "center",
@@ -21,7 +21,7 @@ const Logo = () => {
       <Box className={Styles.caption}>
         <Typography
           variant="caption"
-          sx={{ color: "#0703ff", fontSize: "1rem", fontWeight: 700 }}
+          sx={{ color: "accent.main", fontSize: "1rem", fontWeight: 700 }}
         >
           Explore{" "}
           <span

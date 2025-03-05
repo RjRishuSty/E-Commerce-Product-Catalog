@@ -13,8 +13,8 @@ const Mode = () => {
   };
   return (
     <Box component='div' className={Styles.modeButton}>
-      <Button onClick={handleMode} variant="text" color="inherit">
-        {mode === "light" ? <DarkModeIcon sx={{fontSize:'1.5rem'}}/> : <LightModeIcon sx={{fontSize:'1.5rem'}}/>}
+      <Button onClick={handleMode} variant="text" sx={{color:"secondary.main"}}>
+        {mode === "light" ? <DarkModeIcon size="large"/> : <LightModeIcon size="large"/>}
       </Button>
     </Box>
   );

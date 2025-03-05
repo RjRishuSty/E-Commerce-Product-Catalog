@@ -2,6 +2,7 @@ import { Box, Menu, MenuItem, Stack } from "@mui/material";
 import Styles from "./Profile.module.css";
 import React, { useContext, useState } from "react";
 import { ThemeContexts } from "../../App";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   const { user, logout } = useContext(ThemeContexts);
@@ -35,7 +36,7 @@ const Profile = () => {
           },
         }}
       >
-        <MenuItem>View Profile</MenuItem>
+        <MenuItem component={Link} to='/profile'>View Profile</MenuItem>
         <MenuItem onClick={logout}>Logout</MenuItem>
       </Menu>
     </Stack>

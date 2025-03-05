@@ -4,22 +4,28 @@ export const lightTheme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#0a6205",
-      light:'#e8e7e6',
-      dark:'#043b01'
+      main: "#012803",  
+      light: "#049a4a",
+    },
+    secondary: {
+      main: "#fff",
+    },
+    accent: {
+      main: "#0400f2",
+      light:'#ffc307',
+      primary:'#fff'
     },
     background: {
-      default: "white",
-      paper: "#f5f5f5",
+      default: "#dcfedd",
+      paper: "#ffffff",
     },
     text: {
-      primary: "#000000",
-      secondary: "#555555",
-      light:'#0602DE',
+      primary: "#ffffff",
+      secondary: "#000000",
     },
   },
   typography: {
-    fontFamily: "'Raleway', serif",
+    fontFamily: "'Raleway', serif"
   },
 });
 
@@ -27,16 +33,27 @@ export const darkTheme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#0b0b0b",
+      main: "#6afb76",
+      light: "#012803",
+    },
+    secondary: {
+      main: "#049a4a",
+    },
+    accent: {
+      main: "#041fdb",
+      light:'#e3ad05',
+      primary:'#fff'
     },
     background: {
-      default: "#0b0b0b",
-      paper: "#3b055c",
+      default: "#012302",
+      paper: "#014d05",
     },
     text: {
-      primary: "#ffffff",
-      secondary: "#ffffff",
+      primary: "#000",
+      secondary: "#ffff",
     },
   },
-  typography: { fontFamily: "'Raleway', serif" },
+  typography: {
+    fontFamily: "'Raleway', serif",
+  },
 });

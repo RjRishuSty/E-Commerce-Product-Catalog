@@ -5,12 +5,14 @@ import { ThemeContexts } from "../../App";
 import { Box, Button, Typography } from "@mui/material";
 
 const NavLinks = ({ linkType }) => {
-  const { user, logout } = useContext(ThemeContexts);
+  const { user, logout, isMobile } = useContext(ThemeContexts);
   const links = [
     { name: "Home", to: "/" },
     { name: "About", to: "/about" },
     { name: "Contact", to: "/contact" },
     { name: "Products", to: "/products" },
+    { name: "Login", to: "/login" },
+    { name: "Signup", to: "/sign-up" },
   ];
 
   switch (linkType) {
@@ -27,7 +29,7 @@ const NavLinks = ({ linkType }) => {
                 fontWeight: 600,
                 display: "block",
                 marginBottom: "0.8rem",
-                fontSize:'1.1rem'
+                fontSize: "1.1rem",
               })}
               onMouseEnter={(e) => (e.target.style.color = "#ffcc57")}
               onMouseLeave={(e) =>
@@ -52,7 +54,7 @@ const NavLinks = ({ linkType }) => {
                     color: "white",
                     fontWeight: 600,
                     cursor: "pointer",
-                    fontSize:'1.1rem'
+                    fontSize: "1.1rem",
                   }}
                 >
                   View Profile
@@ -65,8 +67,8 @@ const NavLinks = ({ linkType }) => {
                     color: "white",
                     fontWeight: 600,
                     cursor: "pointer",
-                    textTransform:'capitalize',
-                    fontSize:'1.1rem'
+                    textTransform: "capitalize",
+                    fontSize: "1.1rem",
                   }}
                 >
                   Logout
@@ -100,19 +102,83 @@ const NavLinks = ({ linkType }) => {
                     textDecoration: "none",
                     letterSpacing: "0.2px",
                   })}
-                  onMouseEnter={(e) => (e.target.style.color = "#ffcc57")}
+                  onMouseEnter={(e) => (e.target.style.color = "#0400f2")}
                   onMouseLeave={(e) =>
                     (e.target.style.color =
                       item.to === window.location.pathname
-                        ? "ffc307"
+                        ? "#ffc307"
                         : "#ffffff")
                   }
                 >
-                  {item.name}
+                  {(!isMobile && item.to === "/login") || item.to === "/sign-up"
+                    ? null
+                    : item.name}
                 </NavLink>
               </li>
             ))}
           </ul>
+        </nav>
+      );
+    case "sidebar":
+      return (
+        <nav>
+          {links.map((item) => (
+            <NavLink
+              to={item.to}
+              key={item.name}
+              end
+              style={({ isActive }) => ({
+                color: isActive ? "#ffc307" : "white",
+                fontWeight: 600,
+                display: "block",
+                marginBottom: "0.8rem",
+                fontSize: "1.1rem",
+              })}
+              onMouseEnter={(e) => (e.target.style.color = "#ffcc57")}
+              onMouseLeave={(e) =>
+                (e.target.style.color =
+                  item.to === window.location.pathname
+                    ? '"#ffc307"'
+                    : "#ffffff")
+              }
+            >
+              {user && (item.to === "/login" || item.to === "/sign-up")
+                ? null
+                : item.name}
+            </NavLink>
+          ))}
+          {user && (
+            <>
+              {/* <Box sx={{ mb: 1 }}>
+                <Typography
+                  component={Link}
+                  to="/view-profile"
+                  sx={{
+                    color: "white",
+                    fontWeight: 600,
+                    cursor: "pointer",
+                    fontSize:'1.1rem'
+                  }}
+                >
+                  View Profile
+                </Typography>
+              </Box> */}
+              <Box sx={{ mb: 1 }}>
+                <Typography
+                  onClick={logout}
+                  sx={{
+                    color: "white",
+                    fontWeight: 600,
+                    cursor: "pointer",
+                    textTransform: "capitalize",
+                    fontSize: "1.1rem",
+                  }}
+                >
+                  Logout
+                </Typography>
+              </Box>
+            </>
+          )}
         </nav>
       );
 
