@@ -13,7 +13,7 @@ const Mode = () => {
   };
   return (
     <Box component='div' className={Styles.modeButton}>
-      <Button onClick={handleMode} variant="text" sx={{color:"secondary.main"}}>
+      <Button onClick={handleMode} variant="text" sx={{color:"icon.main"}}>
         {mode === "light" ? <DarkModeIcon size="large"/> : <LightModeIcon size="large"/>}
       </Button>
     </Box>

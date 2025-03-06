@@ -38,7 +38,7 @@ const ProductsSection = () => {
     }
   }
   return (
-    <Box className={Styles.productsSection}>
+    <Box className={Styles.productsSection} sx={{py:5}}>
       <Container>
         {!isLoading ? (
           <Grid container spacing={3}>

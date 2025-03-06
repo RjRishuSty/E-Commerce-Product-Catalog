@@ -7,7 +7,7 @@ const CloseButton = () => {
   return (
     <>
       <CloseIcon
-        sx={{ fontSize: "1.5rem",color:'accent.primary' }}
+        sx={{ fontSize: "1.5rem",color:'icon.main' }}
         onClick={() => setIsSideBar(false)}
       />
     </>

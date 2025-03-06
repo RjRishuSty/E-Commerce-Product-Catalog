@@ -4,25 +4,23 @@ export const lightTheme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#012803",  
-      light: "#049a4a",
+      main: "rgba(250, 250, 250,95)",  
+      light: "rgb(227, 227, 229)",
+      dark:'rgb(44, 42, 42)'
     },
-    secondary: {
-      main: "#fff",
+    icon:{
+      main:'rgb(34, 193, 3)'
     },
-    accent: {
-      main: "#0400f2",
-      light:'#ffc307',
-      primary:'#fff'
+    background:{
+      main:'rgba(241, 235, 235,90)',
+      light:"rgb(239, 239, 239)",
+      dark:'rgb(111, 109, 109)'
     },
-    background: {
-      default: "#dcfedd",
-      paper: "#ffffff",
-    },
-    text: {
-      primary: "#ffffff",
-      secondary: "#000000",
-    },
+     text:{
+      main:'rgb(59, 57, 57)',
+      light:"rgb(134, 132, 132)",
+      dark:'rgb(5, 5, 5)'
+    }
   },
   typography: {
     fontFamily: "'Raleway', serif"
@@ -33,25 +31,23 @@ export const darkTheme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#6afb76",
-      light: "#012803",
+      main: "rgb(49, 48, 48)",
+      light: "rgb(56, 56, 57)",
+      // dark:' rgb(72, 72, 72)'
     },
-    secondary: {
-      main: "#049a4a",
+    icon:{
+      main:'rgb(34, 193, 3)'
     },
-    accent: {
-      main: "#041fdb",
-      light:'#e3ad05',
-      primary:'#fff'
+    background:{
+      main:'rgb(59, 57, 57)',
+      light:"rgb(134, 132, 132)",
+      dark:'rgb(5, 5, 5)'
     },
-    background: {
-      default: "#012302",
-      paper: "#014d05",
-    },
-    text: {
-      primary: "#000",
-      secondary: "#ffff",
-    },
+     text:{
+      main:'rgb(244, 243, 243)',
+      light:"rgb(188, 186, 186)",
+      dark:'rgb(237, 234, 234)'
+    }
   },
   typography: {
     fontFamily: "'Raleway', serif",

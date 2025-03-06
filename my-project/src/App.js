@@ -15,7 +15,7 @@ import UserProfile from "./Pages/UserProfile/UserProfile";
 export const ThemeContexts = createContext();
 
 const App = () => {
-  const isMobile = useMediaQuery("(max-width:800px)");
+  const isMobile = useMediaQuery("(max-width:900px)");
   const [isSidebar, setIsSideBar] = useState(false);
   // LOgin with google (Auth0)
   const {user, isAuthenticated,logout,loginWithRedirect} = useAuth0();
@@ -70,7 +70,7 @@ const App = () => {
       value={{ mode, setMode, isMobile, isSidebar, setIsSideBar, handleMenu,user, isAuthenticated,logout,loginWithRedirect }}
     >
       <ThemeProvider theme={selectedTheme}>
-        <RouterProvider router={router} />
+        <RouterProvider router={router}/>
       </ThemeProvider>
     </ThemeContexts.Provider>
   );

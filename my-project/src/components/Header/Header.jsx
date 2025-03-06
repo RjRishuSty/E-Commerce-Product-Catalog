@@ -1,42 +1,45 @@
 import { AppBar, Box, Button, IconButton, Toolbar } from "@mui/material";
 import MenuSharpIcon from "@mui/icons-material/MenuSharp";
-import NavLinks from "../NavLinks/NavLinks";
-import LoginIcon from "@mui/icons-material/Login";
-import HowToRegIcon from "@mui/icons-material/HowToReg";
-import Mode from "../Mode/Mode";
 import Logo from "../Logo/Logo";
 import SideBar from "../SideBar/SideBar";
 import { useContext } from "react";
 import { ThemeContexts } from "../../App";
+import NavLinks from "../NavLinks/NavLinks";
+import LoginIcon from "@mui/icons-material/Login";
+import HowToRegIcon from "@mui/icons-material/HowToReg";
+import Mode from "../Mode/Mode";
 import { Link } from "react-router-dom";
 import Profile from "../UserProfile/Profile";
-
+import Search from "../Search/Search";
+import IconBtn from "../Icons/IconsBtn";
 const Header = () => {
   const { isMobile, isSidebar, handleMenu, isAuthenticated } =
     useContext(ThemeContexts);
 
   return (
-    <AppBar position="static" sx={{ p: 0.5, backgroundColor:'primary.light' }}>
+    <AppBar position="static" sx={{ p: 0.5, backgroundColor: "primary.main " }}>
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <Logo />
+        {!isMobile && <Search />}
 
-        {!isMobile && <NavLinks linkType="header" />}
-        {/* Login/register/logout Buttons */}
         <Box
           component="div"
           sx={{
+            // border:'2px solid red',
+            minWidth:'15%',
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
           }}
         >
+          <IconBtn />
+
           {!isMobile && (
             <>
               {isAuthenticated ? (
                 <Profile />
               ) : (
                 <>
-                  <Mode />
                   <Button
                     component={Link}
                     to="/login"
@@ -45,10 +48,10 @@ const Header = () => {
                       textTransform: "capitalize",
                       fontWeight: 600,
                       letterSpacing: 0.5,
-                      color:'accent.primary',
+                      color:'text.dark',
                       marginRight:2
                     }}
-                    startIcon={<LoginIcon sx={{color:'secondary.main'}}/>}
+                    startIcon={<LoginIcon sx={{color:'icon.main'}}/>}
                   >
                     Login
                   </Button>
@@ -60,10 +63,10 @@ const Header = () => {
                       textTransform: "capitalize",
                       fontWeight: 600,
                       letterSpacing: 0.5,
-                      color:'accent.primary',
-                      backgroundColor:'accent.light'
+                      color:'text.dark',
+                      backgroundColor:'background.main'
                     }}
-                    endIcon={<HowToRegIcon sx={{color:'secondary.main'}}/>}
+                    endIcon={<HowToRegIcon sx={{color:'icon.main'}}/>}
                   >
                     Sign up
                   </Button>
@@ -75,7 +78,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         {isMobile && (
           <Box>
-            <IconButton sx={{ color:"accent.primary"}}>
+            <IconButton sx={{ color: "accent.primary" }}>
               <MenuSharpIcon onClick={handleMenu} sx={{ fontSize: "2rem" }} />
             </IconButton>
             {isSidebar && <SideBar />}

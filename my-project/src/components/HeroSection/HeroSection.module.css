@@ -1,13 +1,6 @@
 .heroSection{
-    /* border: 1px solid red; */
-    width: 100%;
-    min-height: 60vh;
-    background-image: url(../../assest/banner.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    /* filter: brightness(70%); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* border: 2px solid red; */
+    width: 100% !important;
+    height: auto;
+    
 }

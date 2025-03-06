@@ -6,7 +6,7 @@ import SocalMedia from "../SocalMediaIcon/SocalMedia";
 
 const Footer = () => {
   return (
-    <Stack component="footer" className={Styles.footer}>
+    <Stack component="footer" sx={{backgroundColor:'primary.dark'}} className={Styles.footer}>
       <Container sx={{py:5}}>
         <Grid container>
           <Grid

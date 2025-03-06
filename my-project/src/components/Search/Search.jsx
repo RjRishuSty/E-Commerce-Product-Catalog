@@ -1,19 +1,12 @@
-import {
-  Box,
-  Button,
-  IconButton,
-  InputAdornment,
-  TextField,
-} from "@mui/material";
-import Styles from "./Search.module.css";
+import { Box, IconButton, InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
-import React, {  useState } from "react";
+import React, { useState } from "react";
 
-const Search = () => {  
+const Search = () => {
   const [search, setSearch] = useState("");
   const handleClear = () => {
-    setSearch('');
+    setSearch("");
   };
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -21,9 +14,7 @@ const Search = () => {
   };
 
   return (
-    <Box
-      sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
-    >
+    <>
       <TextField
         fullWidth
         id="search"
@@ -31,23 +22,27 @@ const Search = () => {
         placeholder="Search Products.."
         variant="outlined"
         onChange={handleSearch}
-        className={Styles.search}
-        sx={{border:'2px solid primary'}}
-        InputProps={{ 
+        size="small"
+        sx={{
+          width: { md: "50%", sm: "100%", xs: "100%" },
+          backgroundColor: "background.main",
+          my: { md: 0, sm:2, xs:2 }
+        }}
+        InputProps={{
           endAdornment: (
             <InputAdornment position="end">
               {!search ? (
-                <SearchIcon color="primary" size="large" />
+                <SearchIcon sx={{ color: "icon.main" }} size="large" />
               ) : (
                 <IconButton onClick={handleClear}>
-                  <ClearIcon color="primary" size="large" />
+                  <ClearIcon sx={{ color: "icon.main" }} size="large" />
                 </IconButton>
               )}
             </InputAdornment>
           ),
         }}
       />
-    </Box>
+    </>
   );
 };
 
