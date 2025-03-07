@@ -17,7 +17,7 @@ const NavLinks = ({ linkType }) => {
     } else {
       links.push(
         { name: "Login", to: "/login" },
-        { name: "Signup", to: "/sign-up" }
+        { name: "Signup", to: "/register" }
       );
     }
   }

@@ -39,7 +39,6 @@ const SwiperBox = ({ sectionType }) => {
             </SwiperSlide>
           ))
         : null}
-      <SwiperSlide>Slide 1</SwiperSlide>
     </Swiper>
   );
 };

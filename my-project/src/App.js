@@ -6,12 +6,12 @@ import { lightTheme, darkTheme } from "./theme";
 import { ThemeProvider } from "@emotion/react";
 import About from "./Pages/About/About";
 import { useMediaQuery } from "@mui/material";
-import Login from "./Pages/Login/Login";
-import Register from "./Pages/Register/Register";
+import RegisterPage from "./Pages/Register/RegisterPage";
 // AUTH0
 import { useAuth0 } from "@auth0/auth0-react";
 import { enqueueSnackbar } from "notistack";
 import UserProfile from "./Pages/UserProfile/UserProfile";
+import LoginPage from "./Pages/Login/LoginPage";
 export const ThemeContexts = createContext();
 
 const App = () => {
@@ -61,9 +61,9 @@ const App = () => {
     },
     {
       path: "/login",
-      element: <Login />,
+      element: <LoginPage />,
     },
-    { path: "/sign-up", element: <Register /> },
+    { path: "/register", element: <RegisterPage /> },
   ]);
   return (
     <ThemeContexts.Provider

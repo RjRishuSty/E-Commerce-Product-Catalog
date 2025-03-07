@@ -4,10 +4,8 @@ import Logo from "../Logo/Logo";
 import SideBar from "../SideBar/SideBar";
 import { useContext } from "react";
 import { ThemeContexts } from "../../App";
-import NavLinks from "../NavLinks/NavLinks";
 import LoginIcon from "@mui/icons-material/Login";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
-import Mode from "../Mode/Mode";
 import { Link } from "react-router-dom";
 import Profile from "../UserProfile/Profile";
 import Search from "../Search/Search";
@@ -57,7 +55,7 @@ const Header = () => {
                   </Button>
                   <Button
                     component={Link}
-                    to="/sign-up"
+                    to="/register"
                     variant="contained"
                     sx={{
                       textTransform: "capitalize",
@@ -68,7 +66,7 @@ const Header = () => {
                     }}
                     endIcon={<HowToRegIcon sx={{color:'icon.main'}}/>}
                   >
-                    Sign up
+                    Register
                   </Button>
                 </>
               )}

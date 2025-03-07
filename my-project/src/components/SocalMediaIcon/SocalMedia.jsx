@@ -7,6 +7,7 @@ import GoogleIcon from "@mui/icons-material/Google";
 import { Button, IconButton, Typography } from "@mui/material";
 import { useContext } from "react";
 import { ThemeContexts } from "../../App";
+
 const SocalMedia = ({ componentType }) => {
   const { loginWithRedirect } = useContext(ThemeContexts);
   switch (componentType) {
@@ -39,12 +40,12 @@ const SocalMedia = ({ componentType }) => {
       return (
           <Button
             onClick={(e) => loginWithRedirect()}
-            endIcon={<GoogleIcon sx={{fontSize: "2rem" }} />}
-            variant="contained"
-            sx={{textTransform:'capitalize',letterSpacing:'0.5px'}}
+            startIcon={<GoogleIcon size="large" sx={{color: "icon.main" }} />}
+            variant="text"
+            sx={{textTransform:'capitalize',letterSpacing:'0.5px', color: "text.dark", cursor:'pointer'}}
             size="large"
           >
-              Login with Google
+              Login with google
           </Button>
       );
 

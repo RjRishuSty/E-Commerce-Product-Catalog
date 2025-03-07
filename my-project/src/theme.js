@@ -33,7 +33,7 @@ export const darkTheme = createTheme({
     primary: {
       main: "rgb(49, 48, 48)",
       light: "rgb(56, 56, 57)",
-      // dark:' rgb(72, 72, 72)'
+      dark:' rgb(72, 72, 72)'
     },
     icon:{
       main:'rgb(34, 193, 3)'

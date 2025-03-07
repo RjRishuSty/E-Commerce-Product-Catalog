@@ -4,10 +4,7 @@ import ProductsSection from "../../components/ProductsSection/ProductsSection";
 
 const Home = () => {
   return (
-    <Box
-      component="main"
-      sx={{ backgroundColor: "primary.main" }}
-    >
+    <Box component="main" sx={{ backgroundColor: "primary.main" }}>
       <HeroSection />
       <ProductsSection />
     </Box>
