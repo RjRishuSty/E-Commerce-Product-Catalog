@@ -34,7 +34,7 @@ const Header = () => {
 
           {!isMobile && (
             <>
-              {isAuthenticated ? (
+              {isAuthenticated || JSON.parse(localStorage.getItem('login')) ? (
                 <Profile />
               ) : (
                 <>

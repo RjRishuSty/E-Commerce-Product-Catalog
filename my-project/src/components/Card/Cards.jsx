@@ -6,8 +6,8 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useState } from "react";
 import Deal from "../DealOffer/Deal";
 import ProductRating from "../ProductRating/ProductRating";
- 
-const Cards = ({ item,handleAddToCart }) => {
+
+const Cards = ({ item, handleAddToCart }) => {
   const [favoriteProducts, setFavoriteProducts] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
   const handleFavoriteProduct = () => {
@@ -21,13 +21,15 @@ const Cards = ({ item,handleAddToCart }) => {
     //   console.log("Remove",remove)
     // }
   };
-  // console.log("Incard", item);
+  console.log("Incard", item);
   // console.log("Fav", favoriteProducts);
   return (
-    <Card className={Styles.card}>
+    <Card className={Styles.card} sx={{ backgroundColor: "background.main" }}>
       <Box component="div" className={Styles.offerBox}>
-        <Typography color="success" sx={{ fontWeight: 600 }}>
-          {`${Math.round(item.discountPercentage)}% Off`}
+        <Typography color="icon.main" sx={{ fontWeight: 600 }}>
+          {Math.round(item.discountPercentage) > 0
+            ? `${Math.round(item.discountPercentage)}% Off`
+            : null}
         </Typography>
         <IconButton onClick={handleFavoriteProduct} className={Styles.favBtn}>
           {isFavorite ? (
@@ -50,15 +52,29 @@ const Cards = ({ item,handleAddToCart }) => {
         }}
       >
         <Typography
+          variant="subtitle1"
+          sx={{ color: "text.dark", fontWeight: 600, fontSize: "0.8rem" }}
+        >
+          Price ${item.price}
+        </Typography>
+        <Typography
           variant="caption"
-          sx={{ fontSize: "1rem", fontWeight: 500, color: "#8e8e8e" }}
+          sx={{ fontSize: "0.9rem", fontWeight: 500, color: "text.dark" }}
         >
           {item.title.length > 15
             ? `${item.title.slice(0, 15)}...`
             : item.title}
         </Typography>
       </Box>
-      <Box sx={{width:'100%', display:'flex',justifyContent:'space-between',alignItems:'center', mb:1}}>
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          mb: 1,
+        }}
+      >
         <Deal item={item} />
         <ProductRating item={item} />
       </Box>
@@ -66,7 +82,10 @@ const Cards = ({ item,handleAddToCart }) => {
         variant="contained"
         fullWidth
         onClick={handleAddToCart}
-        startIcon={<ShoppingCartCheckoutIcon sx={{ fontSize: "2rem" }} />}
+        sx={{ backgroundColor: "background.dark", color: "text.main" }}
+        startIcon={
+          <ShoppingCartCheckoutIcon size="large" sx={{ color: "icon.main" }} />
+        }
       >
         Add to cart
       </Button>

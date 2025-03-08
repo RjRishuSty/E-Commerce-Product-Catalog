@@ -17,6 +17,7 @@ export const ThemeContexts = createContext();
 const App = () => {
   const isMobile = useMediaQuery("(max-width:900px)");
   const [isSidebar, setIsSideBar] = useState(false);
+  const [formData,setFormData] = useState()
   // LOgin with google (Auth0)
   const {user, isAuthenticated,logout,loginWithRedirect} = useAuth0();
   
@@ -31,7 +32,12 @@ const App = () => {
   useEffect(() => {
     localStorage.setItem("AppMode", mode);
   }, [mode]);
-
+  useEffect(() => {
+    const getFormData = JSON.parse(localStorage.getItem('newUser'));
+    if (getFormData) {
+      setFormData(getFormData);
+    }
+  }, []);
   useEffect(() => {
     if(user){
       return enqueueSnackbar("Login successfully", {variant:'success'})
@@ -67,7 +73,7 @@ const App = () => {
   ]);
   return (
     <ThemeContexts.Provider
-      value={{ mode, setMode, isMobile, isSidebar, setIsSideBar, handleMenu,user, isAuthenticated,logout,loginWithRedirect }}
+      value={{ mode, setMode,formData, isMobile, isSidebar, setIsSideBar, handleMenu,user, isAuthenticated,logout,loginWithRedirect }}
     >
       <ThemeProvider theme={selectedTheme}>
         <RouterProvider router={router}/>

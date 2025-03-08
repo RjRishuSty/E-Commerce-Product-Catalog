@@ -1,4 +1,3 @@
-import { Stack } from "@mui/material";
 import React, { useContext } from "react";
 import Mode from "../Mode/Mode";
 import ProductsCart from "../Cart/ProductsCart";
@@ -13,18 +12,17 @@ const SideBarIconBox = ({ sidebar }) => {
         <Mode />
         <ProductsCart />
         <ProfileIcon />
-        <FavoriteIcons/>
+        <FavoriteIcons />
       </>
     );
   }
-
   return (
     <>
       {!isMobile && <Mode />}
-      {!isMobile && user && (
+      {!isMobile && (user || JSON.parse(localStorage.getItem("login")) )&& (
         <>
           <ProductsCart />
-          <FavoriteIcons/>
+          <FavoriteIcons />
         </>
       )}
     </>

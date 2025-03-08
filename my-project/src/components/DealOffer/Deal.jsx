@@ -14,7 +14,7 @@ const Deal = ({ item }) => {
             fontWeight: 600,
           }}
           
-          color={item.availabilityStatus === "In Stock" ? "#216101" : "#910442"}
+          color={item.availabilityStatus === "In Stock" ? "icon.main" : "error"}
         >
           {item.availabilityStatus === "In Stock"
             ? "Hot Deal"

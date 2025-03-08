@@ -17,7 +17,7 @@ export const lightTheme = createTheme({
       dark:'rgb(111, 109, 109)'
     },
      text:{
-      main:'rgb(59, 57, 57)',
+      main:'rgb(255, 255, 255)',
       light:"rgb(134, 132, 132)",
       dark:'rgb(5, 5, 5)'
     }
