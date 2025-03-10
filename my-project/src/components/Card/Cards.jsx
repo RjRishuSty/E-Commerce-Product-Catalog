@@ -1,28 +1,15 @@
-import { Box, Button, Card, IconButton, Typography } from "@mui/material";
+import { Box, Button, Card, Typography } from "@mui/material";
 import Styles from "./Cards.module.css";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import { useState } from "react";
 import Deal from "../DealOffer/Deal";
 import ProductRating from "../ProductRating/ProductRating";
+import FavoriteIcons from "../FavoriteIcon/FavoriteIcons";
+import { useContext } from "react";
+import { ThemeContexts } from "../../App";
 
-const Cards = ({ item, handleAddToCart }) => {
-  const [favoriteProducts, setFavoriteProducts] = useState([]);
-  const [isFavorite, setIsFavorite] = useState(false);
-  const handleFavoriteProduct = () => {
-    setIsFavorite((prev) => !prev);
-    // if(isFavorite){
-    //   setFavoriteProducts((prevFavorite)=>{
-    //     return prevFavorite.find((product)=>product.id === item.id);
-    //   })
-    // }else{
-    //   const remove =  favoriteProducts.find((prevFavorite)=> prevFavorite.id === item.id);
-    //   console.log("Remove",remove)
-    // }
-  };
-  console.log("Incard", item);
-  // console.log("Fav", favoriteProducts);
+const Cards = ({ item }) => {
+  const { handleAddToCart } = useContext(ThemeContexts);
+
   return (
     <Card className={Styles.card} sx={{ backgroundColor: "background.main" }}>
       <Box component="div" className={Styles.offerBox}>
@@ -31,13 +18,7 @@ const Cards = ({ item, handleAddToCart }) => {
             ? `${Math.round(item.discountPercentage)}% Off`
             : null}
         </Typography>
-        <IconButton onClick={handleFavoriteProduct} className={Styles.favBtn}>
-          {isFavorite ? (
-            <FavoriteIcon color="error" fontSize="0.9rem" id={item.id} />
-          ) : (
-            <FavoriteBorderIcon color="error" fontSize="0.9rem" id={item.id} />
-          )}
-        </IconButton>
+        <FavoriteIcons itemId={item.id} useIn="card" />
       </Box>
       <img className={Styles.cardImg} src={item.thumbnail} alt={item.title} />
       <Box
@@ -81,6 +62,7 @@ const Cards = ({ item, handleAddToCart }) => {
       <Button
         variant="contained"
         fullWidth
+        value={item.id}
         onClick={handleAddToCart}
         sx={{ backgroundColor: "background.dark", color: "text.main" }}
         startIcon={

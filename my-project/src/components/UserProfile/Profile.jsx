@@ -17,6 +17,7 @@ const Profile = () => {
   };
   const handleLogout = () => {
     localStorage.removeItem("login");
+    localStorage.removeItem("newUser");
     navigate("/");
     return enqueueSnackbar("Logout your account!", { variant: "warning" });
   };

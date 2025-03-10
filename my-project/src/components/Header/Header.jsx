@@ -15,7 +15,13 @@ const Header = () => {
     useContext(ThemeContexts);
 
   return (
-    <AppBar position="static" sx={{ p: 0.5, backgroundColor: "primary.main " }}>
+    <AppBar
+      position="static"
+      sx={{
+        p: 0.5,
+        backgroundColor: "primary.main ",
+      }}
+    >
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <Logo />
         {!isMobile && <Search />}
@@ -24,7 +30,7 @@ const Header = () => {
           component="div"
           sx={{
             // border:'2px solid red',
-            minWidth:'15%',
+            minWidth: "15%",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
@@ -34,7 +40,8 @@ const Header = () => {
 
           {!isMobile && (
             <>
-              {isAuthenticated || JSON.parse(localStorage.getItem('login')) ? (
+              {isAuthenticated ||
+              JSON.parse(localStorage.getItem("login") ?? "false") ? (
                 <Profile />
               ) : (
                 <>
@@ -46,10 +53,10 @@ const Header = () => {
                       textTransform: "capitalize",
                       fontWeight: 600,
                       letterSpacing: 0.5,
-                      color:'text.dark',
-                      marginRight:2
+                      color: "text.dark",
+                      marginRight: 2,
                     }}
-                    startIcon={<LoginIcon sx={{color:'icon.main'}}/>}
+                    startIcon={<LoginIcon sx={{ color: "icon.main" }} />}
                   >
                     Login
                   </Button>
@@ -61,10 +68,10 @@ const Header = () => {
                       textTransform: "capitalize",
                       fontWeight: 600,
                       letterSpacing: 0.5,
-                      color:'text.dark',
-                      backgroundColor:'background.main'
+                      color: "text.dark",
+                      backgroundColor: "background.main",
                     }}
-                    endIcon={<HowToRegIcon sx={{color:'icon.main'}}/>}
+                    endIcon={<HowToRegIcon sx={{ color: "icon.main" }} />}
                   >
                     Register
                   </Button>

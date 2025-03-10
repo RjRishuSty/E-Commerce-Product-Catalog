@@ -21,7 +21,7 @@ const Search = () => {
         fullWidth
         id="search"
         value={search}
-        placeholder="Search Products.."
+        placeholder="Search Products, Brands and More"
         variant="outlined"
         onChange={handleSearch}
         size={isMobile ? "medium" : "small"}
